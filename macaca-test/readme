@@ -1,0 +1,21 @@
+#安装流程
+# 注意事项
+#Android需要使用系统内核，并且打开js调试
+#webview中，H5页面跳转后，要重新调用driver.webview()
+# Use .skip() to skip  tests case.
+#使用chai断言库
+	// 布尔值为true
+	expect('everthing').to.be.ok;
+	expect(false).to.not.be.ok;
+#启动流程
+	macaca doctor；macaca run -d testcase
+	macaca-cli模块：
+		macaca-cli 输出 macaca doctor /macaca server /macaca run 命令
+		macaca doctor命令  引用macaca-doctor模块  			 负责检查环境变量
+		macaca run命令	  引用webdriver-server模块和mocha模块  负责启动webdriver-server 和initMocha
+	webdriver-server模块:
+		driver.‘cmd’ 调用macaca-wd模块的commands.js中的命令，发起https请求，webdriver-server收到请求后，把其转换为
+		“this.device.cmd”,调用macaca-android 驱动，把命令通过socket传递到手机上，驱动uiautomator 进行Android UI自动化
+
+#app 元素定位
+	app-inspector -u YOUR-DEVICE-ID

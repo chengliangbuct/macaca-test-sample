@@ -23,6 +23,9 @@ test-android-chrome: install
 test-android: install
 	macaca doctor
 	platform=android macaca run --verbose -d ./macaca-test/macaca-mobile-sample.test.js
+test-gongyuan: install
+	macaca doctor
+	platform=android macaca run --verbose -d ./macaca-test/main.js
 test-pc:
 	macaca doctor
 	macaca run --verbose -d ./macaca-test/macaca-desktop-sample.test.js

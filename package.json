@@ -14,6 +14,7 @@
     "macaca-utils": "^0.1.8"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "jshint": "*",
     "macaca-cli": "^1.1.0",
     "pre-commit": "1.1.1",
