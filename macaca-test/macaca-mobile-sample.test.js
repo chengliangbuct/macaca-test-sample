@@ -56,6 +56,10 @@ describe('macaca mobile sample', function() {
 
   it('#1 should login success', function() {
     return driver
+      .getWindowSize()
+      .then(size => {
+        console.log(`current window size ${JSON.stringify(size)}`);
+      })
       .login('中文+Test+12345678', '111111')
       .sleep(1000);
   });
@@ -72,6 +76,16 @@ describe('macaca mobile sample', function() {
 
   it('#3 should scroll tableview', function() {
     return driver
+      .elementByName('list')
+      .getProperty('origin')
+      .then(origin => {
+        console.log(`list element origin:${JSON.stringify(origin)}`);
+      })
+      .elementByName('list')
+      .getProperty('size')
+      .then(size => {
+        console.log(`list element size:${JSON.stringify(size)}`);
+      })
       .elementByName('HOME')
       .click()
       .elementByName('list')
